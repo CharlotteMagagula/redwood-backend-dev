@@ -1,0 +1,12 @@
+Run it through command prompt and give command line arguments as well to proceed....
+
+(first argument is username and second is is his/her password (see accountinfo.csv as well))
+
+Hi, this is a Charlotte Magagula from Witbank , completed my Diploma modules at Tshwane University
+of Technology
+
+This ATM MACHINE done in java.... i am just a beginner in java
+
+if u wanna contact me contact me at : lindomagagula97.lc@gmail.com
+
+i hope u like it.. thanks
