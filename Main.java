@@ -1,80 +1,27 @@
-package atmsystem;
-
-
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.util.Scanner; // Import the Scanner class to read text files
-
+package com.company;
 
 public class Main {
 
     public static void main(String[] args) {
-        try {
-            File myObj = new File("accountinfo.csv"); //reading users from a file
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
-            }
-            myReader.close();
 
+	Employee emp1 = new Employee();
+	    emp1.setName("Robert");
+		emp1.setYearOfJoin(1994);
+		emp1.setAddress("64C-WallsStreat");
 
-            String userName = "Charlotte";
-            String password = "5432";
-            double balance = 3500;
+	Employee emp2 = new Employee();
+		emp2.setName("Sam");
+		emp2.setYearOfJoin(2000);
+		emp2.setAddress("68D-WallsStreat");
 
-            Scanner bankScanner = new Scanner(System.in);
-            System.out.println("Please Enter Your PIN Number ");
-            String enteredPassword = bankScanner.nextLine();
+	Employee emp3 = new Employee();
+		emp3.setName("John");
+		emp3.setYearOfJoin(1994);
+		emp3.setAddress("26B-WallsStreat");
 
-            if (enteredPassword.equalsIgnoreCase(password)) {
-                System.out.println("Account Name Holder : " + userName);
-                System.out.println("Please choose the following options ");
-
-                System.out.println("1 - Check Balance , 2 - Deposit Amount , 3 - Withdraw Amount , 4 - Transfer");
-                int userChoice = bankScanner.nextInt();
-
-                if (userChoice == 1) {
-                    System.out.println("Your Current Balance is " + balance);
-                }else if (userChoice == 2) {
-
-                    System.out.println("Please Enter The Amount To Deposit ");
-                    double depositAmount = bankScanner.nextDouble();
-
-                    balance += depositAmount;
-                    System.out.println("You have successfully deposited " + depositAmount
-                            + " \nNow your balance is " + balance);
-                }   else if (userChoice == 3) {
-                    System.out.println("Please Enter the Amount to Withdraw");
-                    double withdrawAmount = bankScanner.nextDouble();
-
-                    if (withdrawAmount > balance) {
-                        System.out.println("Insufficient Balance. Please Try Again");
-                    } else {
-                        balance -= withdrawAmount;
-                        System.out.println("You have successfully withdraw " + withdrawAmount
-                                + " \nNow your balance is " + balance);
-                    }
-                }else if (userChoice == 4) {
-                        System.out.println("Please Enter user name");
-                        String name = bankScanner.nextLine();
-                        System.out.println("Please Enter the Amount to transfer");
-                        double transferAmount = bankScanner.nextDouble();
-                        if (transferAmount > balance) {
-                            System.out.println("Insufficient Balance. Please Try Again");
-                        } else {
-                            balance -= transferAmount;
-                            System.out.println("You have successfully transfer " + transferAmount
-                                    + " to" + name + " \nNow your balance is " + balance);
-                        }
-                }
-                }
-
-
-            } catch (FileNotFoundException e) {
-                        System.out.println("An error occurred.");
-                        e.printStackTrace();
-                    }
-                    }
+		System.out.println("Name \t Year Of joining \t Address");
+		System.out.println(emp1.getName() + " \t " + emp1.getYearOfJoin() + " \t " + emp1.getAddress());
+		System.out.println(emp2.getName() + " \t " + emp2.getYearOfJoin() + " \t " + emp2.getAddress());
+		System.out.println(emp3.getName() + " \t " + emp3.getYearOfJoin() + " \t " + emp3.getAddress());
+    }
 }
-
